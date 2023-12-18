@@ -1,3 +1,0 @@
-&OutputFilename
- output_filename = './Data/XX_m_summed_Nside4.dat'
-&end

@@ -1,9 +1,0 @@
-&OutputFilename
- output_filename_scalar = './Data/Nside4/fwhm2220/scalar_Nside4.dat'
- output_filename_tensor = './Data/Nside4/fwhm2220/tensor_Nside4.dat'
-&end
-
-!XX covariance
-&XXfile
- XX_filename = '../CalculateXX_with_m_summed/Data/XX_m_summed_Nside4.dat'
-&end
