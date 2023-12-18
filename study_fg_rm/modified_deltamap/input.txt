@@ -1,0 +1,73 @@
+!nloptで最適化するパラメタの数
+!6 = (# of foreground params) + (r,s,n_est)
+&nlo_nvar
+ nvar=6
+&end
+
+&Params
+ Nside=4	
+ noiseless = .false.
+ sig_noise = 0.2d0
+! algorithm = 'modified_delta_map'
+! algorithm = 'PowLawDust'
+ algorithm = 'PowLawSync'
+! algorithm = 'PowLawDustSync'
+! algorithm = 'psm162_deltamap'
+ Td_Kelvin = 19.15d0
+&end
+
+&numCMB
+ numchan = 2
+&end
+
+!nuCMB_arrayの配列の次元は上のnumCMBchanに従う
+!available bands are:
+!(40,50,60,68,78,89,100,119,140,166,195,235,280,337,402)
+&bands
+!nu_array(1) = 140.0d0
+!nu_array(2) = 280.0d0
+nu_array(1) = 140.0d0
+nu_array(2) = 40.0d0
+
+!nu_array(3) = 60.0d0
+!nu_array(1) = 140.0d0
+!nu_array(2) = 280.0d0
+
+
+!nu_array(2) = 40.0d0
+!nu_array(3) = 60.0d0
+!nu_array(1) = 140.0d0
+!nu_array(4) = 280.0d0
+!nu_array(5) = 340.0d0
+!nu_array(6) = 400.0d0
+
+! nu_array(1) = 40.0d0
+! nu_array(2) = 60.0d0
+! nu_array(3) = 140.0d0
+! nu_array(4) = 230.0d0
+! nu_array(5) = 280.0d0
+! nu_array(6) = 340.0d0
+&end
+
+&io_filenames
+!--
+! maskfilename = '../Masks/mask_onepixel_Nside4.fits'
+ maskfilename = '../Masks/mask_p06_Nside4.v2.fits'
+!--
+ mapdir = '../SimulateMap/LensedCMB_with_noise/PowLawSync/Nside4/fwhm2220/r0.1/'
+!--
+ resultdir = 'Result/PowLawSync_noise/r0.1/'
+&end
+
+&signalcov
+!--
+ cov_tens_file = '../Calculate_signal_cov_matrix/Data/Nside4/fwhm2220/tensor_Nside4.dat'
+!--
+ cov_scal_file = '../Calculate_signal_cov_matrix/Data/Nside4/fwhm2220/scalar_Nside4.dat'
+&end
+ 
+!先に計算しておいたnoise covariance matrixがあるdirectory名
+!noise_covmat_prefixの後、(nsideの数字)_XXXGHz.datと続くように作っておく
+&noisecov
+ noise_covmat_prefix = '../Calculate_noise_cov_matrix/Data/Nside4/fwhm2220/'
+&end
