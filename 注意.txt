@@ -1,0 +1,16 @@
+１
+fg_map, cmb_map, maskの呼び出しをfunctionの
+
+Delta_map_alpha.jl
+
+make_data_m.jl
+
+data_m_make.py
+
+main_function.jl
+
+などで、パスを指定しているので気を付ける。
+
+
+２
+
